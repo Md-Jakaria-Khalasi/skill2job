@@ -20,13 +20,13 @@ class Sidebar(tk.Frame):
             pady=20
         ).pack(fill="x", padx=10, pady=10)
 
-        tk.Button(
-            self,
-            text="Job Circulars",
-            bg="#d9d9d9",
-            font=("Arial", 12),
-            command=lambda: self.callback("JobCirculars")
-        ).pack(side="left",fill="x", padx=20, pady=20)
+        # tk.Button(
+        #     self,
+        #     text="Job Circulars",
+        #     bg="#d9d9d9",
+        #     font=("Arial", 12),
+        #     command=lambda: self.callback("JobCirculars")
+        # ).pack(side="left",fill="x", padx=20, pady=20)
 
         self._menu("Job Circulars", "JobCirculars")
         self._menu("My Job", "MyJob")
