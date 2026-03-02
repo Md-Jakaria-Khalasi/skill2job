@@ -64,7 +64,8 @@ class Profile(tk.Frame):
             padx=60,
             pady=40
         )
-        self.card.grid(row=0, column=0, pady=40)
+        self.card.grid(row=0, column=0, pady=40,padx=40, sticky="nsew")
+        self.wrapper.columnconfigure(0, weight=1)
 
         # -------- PHOTO --------
         self.photo_label = tk.Label(
@@ -131,7 +132,7 @@ class Profile(tk.Frame):
             text=label,
             bg="white",
             font=("Arial", 11, "bold")
-        ).pack(anchor="w")
+        ).pack(anchor="w",padx=20)
 
         entry = tk.Entry(self.card, font=("Arial", 11))
         entry.pack(fill="x", pady=6)
