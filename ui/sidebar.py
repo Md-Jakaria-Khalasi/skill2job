@@ -1,7 +1,4 @@
 import tkinter as tk
-from pydoc import pager
-from struct import pack
-from textwrap import fill
 
 
 class Sidebar(tk.Frame):
@@ -20,21 +17,14 @@ class Sidebar(tk.Frame):
             pady=20
         ).pack(fill="x", padx=10, pady=10)
 
-        # tk.Button(
-        #     self,
-        #     text="Job Circulars",
-        #     bg="#d9d9d9",
-        #     font=("Arial", 12),
-        #     command=lambda: self.callback("JobCirculars")
-        # ).pack(side="left",fill="x", padx=20, pady=20)
+        # Menu Buttons
+        self.create_button("Job Circulars", "JobCirculars")
+        self.create_button("My Job", "MyJob")
+        self.create_button("CV", "CV")
+        self.create_button("My Skills", "Skills")
+        self.create_button("My Pathway", "Pathway")
 
-        self._menu("Job Circulars", "JobCirculars")
-        self._menu("My Job", "MyJob")
-        self._menu("CV", "CV")
-        self._menu("My Skils", "Skills")
-        self._menu("My Pathway", "Pathway")
-
-        # Bottom profile
+        # Profile Button (Bottom)
         tk.Button(
             self,
             text="Profile",
@@ -43,12 +33,13 @@ class Sidebar(tk.Frame):
             command=lambda: self.callback("Profile")
         ).pack(side="bottom", fill="x", padx=20, pady=20)
 
-    def _menu(self, text, page):
+    def create_button(self, text, page):
         tk.Button(
             self,
             text=text,
             anchor="w",
             bg="#e58b8b",
+            activebackground="#d17f7f",
             bd=0,
             font=("Arial", 12),
             command=lambda: self.callback(page)
